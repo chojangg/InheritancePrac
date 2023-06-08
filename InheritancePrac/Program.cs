@@ -1,5 +1,7 @@
-﻿using System;
+﻿using InheritancePrac;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
@@ -11,13 +13,22 @@ namespace InheritancePrac
     {
         class Parent
         {
+            public static int counter = 0;
+
             public Parent() { Console.WriteLine("Parent()"); }
             public Parent(int param) { Console.WriteLine("Parent(int param)"); }
             public Parent(string param) { Console.WriteLine("Parent(string param"); }
+
+            public void ContParent()
+            {
+                Parent.counter++;
+            }
         }
 
         class Child : Parent
         {
+            public void CountChild() { Child.counter++; }
+
             public Child() : base(10)
             {
                 Console.WriteLine("Child(): base(10)");
