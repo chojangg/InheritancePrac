@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InheritancePrac;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,12 +7,23 @@ using System.Windows.Forms;
 
 namespace InheritancePrac
 {
-    internal static class Program
+    internal class Program
     {
-        static void Main(String[] args)
+        static void Main(string[] args)
         {
-            Dog dog = new Dog();
-            Cat cat = new Cat();
+            List<Animal> animals = new List<Animal>() {
+                new Dog(), new Dog(), new Dog(),
+                new Cat(), new Cat(), new Cat()
+            };
+
+            foreach (var item in animals)
+            {
+                item.Eat();
+                item.Sleep();
+
+                ((Dog)item).Bark();
+                ((Cat)item).Meow();
+            }
         }
     }
 }

@@ -2,17 +2,14 @@
 
 namespace InheritancePrac
 {
-    internal class Dog
+    internal class Dog : Animal
     {
-        public int Age { get; set; }
         public string Color { get; set; }
-        public Dog()
+
+        public void Bark()
         {
-            this.Age = 0;
+            Console.WriteLine("왈왈 짓습니다.");
         }
-        public void Eat()
-        {
-            Console.WriteLine("냠냠 먹습니다");
-        }
+
     }
 }
